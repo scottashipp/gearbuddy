@@ -15,7 +15,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <docker.image.prefix>scottashipp</docker.image.prefix>
+        <aws.account.id>464726271909</aws.account.id>
     </properties>
 
     <dependencies>
@@ -42,7 +42,11 @@
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.9</version>
                 <configuration>
-                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <repository>${aws.account.id}.dkr.ecr.us-west-2.amazonaws.com/${project.artifactId}</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
                 </configuration>
                 <executions>
                     <execution>
@@ -76,6 +80,13 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
         </plugins>
     </build>

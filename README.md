@@ -54,6 +54,16 @@ GearBuddy is a Spring Boot app running in a Docker container and built by Maven.
 $ mvn install
 ```
 
+Note: May require first logging in to aws ecr:
+```
+$ eval $(aws ecr get-login --no-include-email --region us-west-2)
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /home/scottshi/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+```
 ### Run
 
 ```
@@ -62,3 +72,4 @@ $ docker run -p 8080:8080 -t docker.io/scottashipp/gearbuddy-main
 
 ### View
 Open a browser and visit http://localhost:8080
+
