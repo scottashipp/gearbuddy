@@ -1,19 +1,20 @@
 sudo: required
 language: java
-jdk: openjdk10
+jdk: openjdk11
 services:
 - docker
 addons:
-    apt:
-      packages:
-        - "python3"
-        - "python3-pip"
+  apt:
+    packages:
+    - python3
+    - python3-pip
 before_install:
 - pip3 install awscli --upgrade --user
 - export PATH=$PATH:$HOME/.local/bin
-- aws sts get-caller-identity
 - eval $(aws ecr get-login --no-include-email --region us-west-2)
+
 env:
   global:
   - secure: k/gC5Eqy7hlNyGKWgoWXfPpXEwcV/9NtgI1qWHjYG64jgFnQ5GAbGXXa7Ef2TbZ6My/fj9ae+UmFsUtp6gHodIUedXM62aa+ZuAphHK15XBqQsEQMebHP8/9g3WpQaFDUvoMzNlfRq2nCs9S3sWBOZmF4OFKzZi7ymurqnZA7trWiXhS+K354Zt2/8pqm/z4S33UBAPrGe1Zz9Fw23A0jc3MxOidzpAcCm9avbOpqyVKoeqxL5x+z0yPoPHzQ0h7DBUsHKyO2T9SJUFdEcPCkF6O8y5w2gtNcXzfFsZN7H3EnWxu5R7bRRO/mNwe5wDiPjQFiuvKT6P+AR0hTEwCAlhnH1YvLiBnKhmqbxJ1Ay7MgYrHdwgqNhQpwPTbBBoMXkfFEpXQpCL0hAUJ8TnNLVZH73sOUhXyQeIFn6CiMGUgL+c7MhxmCJ+PJYVDHsEeE+SOZj5jysHoA7EI5g85uuL5WycCdErpb9mPoSY7kSA6vZYJ1J3f+64QIoDgscTC+JdCe6QpDQAeNKFbJESkhcsESblkKAKBq5w3X8bMu0jzmudYcprp/0ousTPI3uDLiKCtqAGCFRCbsxI+vgLoAC5g1SN9OJQKrKuIE2Lw0cmMFRbmOmyakrNvS+IPj6Q7zRkAmBeWZvKMmx0a2+lUFXaqele3ayclMUM7T6jpXEY=
   - secure: XseS8iRNueFqbgyQwvi3xp7tS+Cu8bZ/O7W3YkQfsH46J30A8JivC+BGWq6VcQa55wWb/RTN4qBw0crFpPX92ul2Fk8qTzaBL56ldDQvb7vaOGoysH124Axk8QwQwJtVPvvnYKhRY6f2kL2bEpGRpMbFWYafknMSaVVdMpfo+lT2MKKw/5zJhKWDLQTZnqvUL+9qhsO9nHmWf1PqyPUv0gGtNFB96bQRt4t6V44Dj5lMqyJ+cqB1CltR3bSQHpAGVtfxBIOlZKBYfJ0QohjlXgO5oRS2FW3WtSAdNLWhfX2JfxXmT7GsdLgYIqV09Mn2vmAVkaufLYYBhlE6iKWYX3P8863WiGhxJDy9gI/7E4SXHnamKt4+RqnHSTk2jCYCclTE9/RRix2SZCrYE1rpoF991ivOhT8Du2yDkeNcqoaywpjXt3cIcUsRSUrR9Xb40CA1zBDbBxlyF/H2edGO9PdZ79Z2xaEPqTynErWyyuPo2bB6s2AwsWcMFqmS9FUIxM4iMxx8LdM9qqops0utym4M8ydvvBQ8tknJfrZxryBpyPpngENDmeL+AuT/tCdcprIaehUfPyFv4M2dONUhnE+ooEOkkfHiXa4nRDoBqxw0lORYHaJ1K4vLPlu77MvE6enLS9crMgKqm2yJxo5rpb6Hs61yMsZz4Tqq4QxxRGs=
+  - secure: 0QNxN3E0ItT2CK6wXAanSq5XbNm9Px5rWrlJ2brFE0v/fthOIWTpV4SxZ1nyRGT4BN/Hk+tbpEp1am2WCA9DWHUVG3KXRwCPhuFHfsHh956y6F3zhJHISUtptYyuciAX7YJePOq/ycAATJ/X5L9dfI2EvbljcDLhMMsu0vLDBJD9E0d45b5eSWmny5G/XIScGHz0WkO2QZPXDx9TvStPNBf8WnTLvEvnlPROrFTyuo9sx5OxvWz/R4LIydY0RC+UkZEhf4pqo31x0dIScuXiMumjYUC7XqY3XUbSInlejGZzXnwtZLZXizlwdBkz1/gf4hC/41TlGrjIsQU0Wd56WERobUUdlkr0LQHmCOcRpvFxsyDCPWNuujSMCwuBk1AE4EFrVxPq0tpNq8TDum9KDp1VpUTJR5T/K9bm14Fxf1GlhsnjiT4RRR/zzYI4klKaoQpIYqne+46iO6cpzRQfg4IYUqnBrNtDOwUwmPvU5cXEmHcM8cIWzEp9tllHn40Kfkg0F4WgTYy0FnZ3IDJ2VJDKBiqk/VsxahaqvsoxbpZdQS/DbmiwRPWDHKdGETM6XKF4SHBtosLXPm61LdG0M/5AtCwyyt0WlKRG29lYVLIcJDpRL2RLqjbqkgmbs15vg7E/yscgkX9DeS1i2/JDv+DPnScm7eREBDkhYdSWvrc=
