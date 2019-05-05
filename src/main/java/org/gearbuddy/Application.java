@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Application {
 
-    private static final Logger log = LoggerFactory.getLogger(Application.class);
+  private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-    @RequestMapping("/")
-    public ResponseEntity<String> home() {
-        log.info("home called; returning welcome message");
-        return ResponseEntity.ok().body("Welcome to Gear Buddy!");
-    }
+  @RequestMapping("/")
+  public ResponseEntity<String> home() {
+    log.info("home called; returning welcome message");
+    return ResponseEntity.ok().body("Welcome to Gear Buddy!");
+  }
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 
 }
