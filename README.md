@@ -1,4 +1,4 @@
-# gearbuddy
+# gearbuddy [![Build Status](https://travis-ci.org/scottashipp/gearbuddy.svg?branch=master)](https://travis-ci.org/scottashipp/gearbuddy)
 Track your outdoor gear purchases. Make reusable gear lists. Know where things are.
 
 ## What?
