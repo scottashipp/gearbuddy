@@ -21,11 +21,6 @@ public class GearRepositoryTest {
   @Autowired
   private GearRepository repo;
 
-  @Before
-  public void setup() {
-
-  }
-
   @Test
   public void testAddGear() {
     assertEquals(0, repo.count());
