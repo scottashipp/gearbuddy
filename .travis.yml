@@ -12,7 +12,8 @@ before_install:
 - pip3 install awscli --upgrade --user
 - export PATH=$PATH:$HOME/.local/bin
 - eval $(aws ecr get-login --no-include-email --region us-west-2)
-
+script:
+  mvn verify
 env:
   global:
   - secure: k/gC5Eqy7hlNyGKWgoWXfPpXEwcV/9NtgI1qWHjYG64jgFnQ5GAbGXXa7Ef2TbZ6My/fj9ae+UmFsUtp6gHodIUedXM62aa+ZuAphHK15XBqQsEQMebHP8/9g3WpQaFDUvoMzNlfRq2nCs9S3sWBOZmF4OFKzZi7ymurqnZA7trWiXhS+K354Zt2/8pqm/z4S33UBAPrGe1Zz9Fw23A0jc3MxOidzpAcCm9avbOpqyVKoeqxL5x+z0yPoPHzQ0h7DBUsHKyO2T9SJUFdEcPCkF6O8y5w2gtNcXzfFsZN7H3EnWxu5R7bRRO/mNwe5wDiPjQFiuvKT6P+AR0hTEwCAlhnH1YvLiBnKhmqbxJ1Ay7MgYrHdwgqNhQpwPTbBBoMXkfFEpXQpCL0hAUJ8TnNLVZH73sOUhXyQeIFn6CiMGUgL+c7MhxmCJ+PJYVDHsEeE+SOZj5jysHoA7EI5g85uuL5WycCdErpb9mPoSY7kSA6vZYJ1J3f+64QIoDgscTC+JdCe6QpDQAeNKFbJESkhcsESblkKAKBq5w3X8bMu0jzmudYcprp/0ousTPI3uDLiKCtqAGCFRCbsxI+vgLoAC5g1SN9OJQKrKuIE2Lw0cmMFRbmOmyakrNvS+IPj6Q7zRkAmBeWZvKMmx0a2+lUFXaqele3ayclMUM7T6jpXEY=
