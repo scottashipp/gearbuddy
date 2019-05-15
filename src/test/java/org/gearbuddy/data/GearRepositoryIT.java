@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @DataJpaTest
 @ActiveProfiles("integrationtest")
-public class GearRepositoryTest {
+public class GearRepositoryIT {
 
   @Autowired
   private GearRepository repo;
@@ -42,4 +41,5 @@ public class GearRepositoryTest {
     g.setModel(model);
     repo.save(g);
   }
+
 }

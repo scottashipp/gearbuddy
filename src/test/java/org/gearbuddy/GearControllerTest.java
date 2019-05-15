@@ -129,9 +129,6 @@ public class GearControllerTest {
         .andExpect(jsonPath("$[1].type", is("Water Shoes")))
         .andExpect(jsonPath("$[1].brand", is("Keen")))
         .andExpect(jsonPath("$[1].model", is("Seacamp II CNX Sandals - Kids")));
-
-
   }
-
 
 }

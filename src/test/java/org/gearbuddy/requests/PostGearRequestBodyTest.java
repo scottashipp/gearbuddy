@@ -14,21 +14,6 @@ public class PostGearRequestBodyTest {
 
   @Test
   public void testPostGearRequestBody() throws Exception {
-    /**
-     *
-     * {
-     *   "purchaseDate": "2016-07-22",
-     *   "color": "Green \/ Gray",
-     *   "size": "8-person",
-     *   "purchasePlace": "B&H PhotoVideo Outdoors",
-     *   "warranty": "None",
-     *   "model": "Montana",
-     *   "purchasePrice": "$144.95",
-     *   "type": "Tent",
-     *   "brand": "Coleman"
-     * }
-     *
-     */
     String request = new JSONObject()
         .put("type", "Tent")
         .put("brand", "Coleman")
@@ -53,4 +38,5 @@ public class PostGearRequestBodyTest {
     assertEquals("$144.95", req.getPurchasePrice());
     assertEquals("None", req.getWarranty());
   }
+
 }

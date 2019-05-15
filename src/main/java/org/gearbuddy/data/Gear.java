@@ -118,4 +118,5 @@ public class Gear {
         + ", warranty='" + warranty + '\''
         + '}';
   }
+
 }
