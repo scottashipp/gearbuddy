@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  gearbuddy-mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=GearBuddyDb
+      - MYSQL_PASSWORD=password
+    ports:
+      - 3306:3306
+    command: --init-file /data/application/create.sql
+    volumes:
+      - ./src/main/resources/sql/create.sql:/data/application/create.sql
+
+  gearbuddy-main:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/gearbuddy-main:0.1.0-SNAPSHOT
+    restart: on-failure
+    depends_on:
+      - gearbuddy-mysql
+    ports:
+      - 8080:8080
+    environment:
+      - DATABASE_HOST=gearbuddy-mysql
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=password
+      - DATABASE_NAME=GearBuddyDb
+      - DATABASE_PORT=3306

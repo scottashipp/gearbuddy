@@ -1,6 +1,9 @@
 package org.gearbuddy;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import org.gearbuddy.data.Gear;
 import org.gearbuddy.data.GearRepository;
 import org.gearbuddy.requests.PostGearRequestBody;
@@ -25,6 +28,12 @@ public class GearController {
   @Autowired
   public GearController(GearRepository repo) {
     this.repo = repo;
+  }
+
+  @GetMapping("/gear")
+  ResponseEntity<List<Gear>> getAll() {
+    List<Gear> allGear = StreamSupport.stream(repo.findAll().spliterator(), false).collect(Collectors.toList());
+    return ResponseEntity.ok(allGear);
   }
 
   @PostMapping("/gear")
