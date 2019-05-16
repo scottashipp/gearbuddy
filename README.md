@@ -1,4 +1,4 @@
-# gearbuddy [![Build Status](https://travis-ci.org/scottashipp/gearbuddy.svg?branch=master)](https://travis-ci.org/scottashipp/gearbuddy)
+# gearbuddy [![Build Status](https://travis-ci.com/scottashipp/gearbuddy.svg?branch=master)](https://travis-ci.com/scottashipp/gearbuddy)
 Track your outdoor gear purchases. Make reusable gear lists. Know where things are.
 
 GearBuddy is built with Java 11, Spring Boot, Maven, JUnit, Mockito, Jacoco, Docker, MySql, AWS ECR and ECS, among others.
