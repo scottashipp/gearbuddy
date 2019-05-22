@@ -96,38 +96,6 @@ This should create and run two containers:
 - gearbuddy_gearbuddy-mysql_1
 - gearbuddy_gearbuddy-mysql_1
 
-#### Manual run
-If you for some reason don't want to use docker-compose (can't imagine why) then you can also do this.
- 
-First, MySql container needs to be running:
-
-```bash
-$ docker start gearbuddy-mysql
-```
-
-Obviously, that will fail if you don't have that container. In which case, follow the [mysql container setup instructions below](#setup-the-mysql-container). 
-
-Next, run the Spring Boot container:
-
-```bash
-$ docker container rm gearbuddy-main # just in case it's already there remove it
-$ docker run -p 8080:8080 --name gearbuddy-main -t {{container id}}
-```
-
-Add the `-d` flag to that command if you don't want STDOUT to appear.
-
-#### Setup the MySql container
-
-If you don't already have the gearbuddy-mysql container, you need:
-
-```bash
-$ docker pull mysql
-$ docker run -p 3306:3306 --name gearbuddy-mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:8.0
-``` 
-
-Next, don't forget to connect and run src/main/resources/sql/create.sql to create the GearBuddyDb database.
-
-
 ### Deploy (push) container to AWS ECR
 
 Maven has been configured to deploy the container to AWS ECR, provided your machine is set up correctly.
