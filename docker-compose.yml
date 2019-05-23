@@ -11,6 +11,8 @@ services:
       - MYSQL_PASSWORD=password
     ports:
       - 3306:3306
+    volumes:
+      - gearbuddydata:/var/lib/mysql
 
   gearbuddy-main:
     image: ${AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/gearbuddy-main:0.1.0-SNAPSHOT
@@ -25,3 +27,9 @@ services:
       - DATABASE_PASSWORD=password
       - DATABASE_NAME=GearBuddyDb
       - DATABASE_PORT=3306
+    volumes:
+      - gearbuddyapp:/tmp
+
+volumes:
+  gearbuddyapp:
+  gearbuddydata:
