@@ -3,6 +3,8 @@ Track your outdoor gear purchases. Make reusable gear lists. Know where things a
 
 GearBuddy is built with Java 11, Spring Boot, Maven, JUnit, Mockito, Jacoco, Docker, MySql, AWS ECR and ECS, among others.
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A7147N8)
+
 ## In this readme
 - [What is GearBuddy](#what-is-gearbuddy)
 - [How to build and run](#build-and-run)
@@ -163,3 +165,5 @@ $ curl -X GET \
 
 ## License
 GearBuddy is made available under the MIT License. See the LICENSE file for more details.
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A7147N8)
