@@ -16,7 +16,7 @@
     <properties>
         <java.version>11</java.version>
         <aws.account.id>${env.AWS_ACCOUNT_ID}</aws.account.id>
-	<jackson.version>2.9.9</jackson.version>
+	<jackson.version>2.9.10.1</jackson.version>
     </properties>
 
     <dependencies>
